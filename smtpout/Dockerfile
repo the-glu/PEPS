@@ -10,7 +10,7 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y -q update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y -q install python-software-properties g++ make git curl
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y -q install nodejs
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y -q install nodejs nodejs-legacy npm
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install Haraka
